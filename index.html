@@ -37,6 +37,15 @@
 <![endif]-->
 <!-- Start of Async Drift Code -->
 
+    <script type="text/javascript">
+        function sendMail() {
+            var message = document.getElementById('message').value;
+            var email = document.getElementById('email').value;
+            var link = "mailto:osidi1998@gmail.com"+"?cc="+email+ "&subject=" + escape("This is my subject")+"&body=" + escape(message);
+
+             window.location.href = link;
+        }
+    </script>
 
 </head>
 <body>
@@ -249,8 +258,14 @@
                         </ul>
                     </section>
                     <section class="code-skills col-md-6 padding_60">
-                        <div class="section-title bottom_45"><span></span><h2>Softwares </h2></div>
+                        <div class="section-title bottom_45"><span></span><h2>Softwares</h2></div>
                         <ul class="skill-list">
+                            <li>
+                                <h3>Git and Github</h3>
+                                <div class="progress">
+                                    <div class="percentage" style="width:80%;"></div>
+                                </div>
+                            </li>
                             <li>
                                 <h3>Adobe XD</h3>
                                 <div class="progress">
@@ -390,17 +405,52 @@
                         <div id="filters-container">
                             <!-- '*' means shows all item elements -->
                             <div data-filter="*" class="cbp-filter-item cbp-filter-item-active">All</div>
-                            <div data-filter=".webdapps" class="cbp-filter-item">Web Apps</div>
-                            <div data-filter=".mobileapps" class="cbp-filter-item">mobile Apps</div>
-                            <div data-filter=".webdesign" class="cbp-filter-item">Web design</div>
-                            <div data-filter=".mobiledesign" class="cbp-filter-item">mobile design</div>
+                            <div data-filter=".web" class="cbp-filter-item">Web Apps</div>
+
+                            <div data-filter=".mobile" class="cbp-filter-item">mobile apps</div>
                            <!--  <div data-filter=".psedit" class="cbp-filter-item">Photoshop editing</div> -->
                         </div>
                     </div>
                     <div id="grid-container" class="top_60">
 
                         <!-- a image work -->
-                        <div class="cbp-item mobiledesign">
+                        <div class="cbp-item webapps web mobile">
+                            <a target="_blank" href="https://www.behance.net/gallery/74983865/ccpte-Web-app-design" >
+                                <figure>
+                                    <img src="images/works/ccpte.png" alt="ccpte ui design">
+                                    <figcaption>
+                                        <span class="title">ccpte website</span><br/>
+                                        <span class="info">Website for an center of commerce in Errachdia</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- a image work -->
+                        <div class="cbp-item webapps web">
+                            <a target="_blank" href="https://www.behance.net/gallery/75135011/ColorFul-landing-page" >
+                                <figure>
+                                    <img src="images/works/colorfullanding_pages.png" alt='colorful landing pages'>
+                                    <figcaption>
+                                        <span class="title">colorful landing page</span><br/>
+                                        <span class="info">Simple UI landing page design made using adobe xd</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- a image work -->
+                        <div class="cbp-item web">
+                            <a target="_blank" href="https://www.behance.net/gallery/74920709/UpKeep" >
+                                <figure>
+                                    <img src="images/works/upkeep.jpg" alt="upkeep ui design">
+                                    <figcaption>
+                                        <span class="title">UpKeep Web App</span><br/>
+                                        <span class="info">Web app of managemet for comapny in fès Morocco</span>
+                                    </figcaption>
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- a image work -->
+                        <div class="cbp-item mobile">
                             <a target="_blank" href="https://www.behance.net/gallery/69704139/Full-Dict-App-Design" >
                                 <figure>
                                     <img src="images/works/dict_app_design.png" alt="">
@@ -424,7 +474,7 @@
                             </a>
                         </div>
                         <!-- a image work -->
-                        <div class="cbp-item mobiledesign">
+                        <div class="cbp-item mobile">
                             <a target="_blank" href="https://www.behance.net/gallery/62487145/Chat-App-UI-Design" >
                                 <figure>
                                     <img src="images/works/chat_app_design.png" alt="">
@@ -435,18 +485,6 @@
                                 </figure>
                             </a>
                         </div>
-                        <!-- a work -->
-                        <!-- <div class="cbp-item psedit">
-                            <a target="_blank" href="https://www.behance.net/gallery/63996039/Pure-effect">
-                                <figure>
-                                    <img src="images/works/pure_effect.jpg" alt="">
-                                    <figcaption>
-                                        <span class="title">Pure Effect</span><br/>
-                                        <span class="info">making images more bright and more purely</span>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div> -->
                 </section>
             </div>
 
@@ -461,17 +499,14 @@
                         <div class="section-title top_15 bottom_30"><span></span><h2>Contact Form</h2></div>
                         <form class="site-form">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <input class="site-input" placeholder="Name">
-                                </div>
-                                <div class="col-md-6">
-                                    <input class="site-input" placeholder="E-mail">
+                                <div class="col-md-12">
+                                    <input type="email" required class="site-input" id="email" placeholder="E-mail">
                                 </div>
                                 <div class="col-md-12">
-                                    <textarea class="site-area" placeholder="Message"></textarea>
+                                    <textarea required class="site-area" id="message" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-md-12 top_15 bottom_30">
-                                    <button class="site-btn" type="submit">Submit</button>
+                                    <button class="site-btn" onclick="sendMail()" type="submit">Submit</button>
                                 </div>
                             </div>
                         </form>
